@@ -44,4 +44,4 @@ driver.find_element(By.ID, 'auth-fpp-link-bottom')
 driver.find_element(By.ID, "ap-other-signin-issues-link")
 
 #for Create your Amazon account button
-driver.find_element(By.XPATH,
+driver.find_element(By.XPATH, "//span[@class='a-button-inner']//a[@id='createAccountSubmit']")
