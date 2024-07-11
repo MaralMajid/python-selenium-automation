@@ -22,11 +22,16 @@ def click_right_button(context):
     context.driver.find_element(By.XPATH, "//*[@data-test='accountNav-signIn']").click()
     sleep(2)
 
-@when('Search an item')
-def search_item(context):
-    context.driver.find_element(By.CSS_SELECTOR,"#search" ).send_keys('water')
 
-@when('Click to search button')
+@when('Search for {product}')
+def search_for_product(context,product):
+    context.driver.find_element(By.CSS_SELECTOR,"#search" ).send_keys(product)
+
+
+
+@when('Click search button')
 def click_search_button(context):
     context.driver.find_element(By.CSS_SELECTOR,"[data-test='@web/Search/SearchButton']").click()
     sleep(6)
+
+

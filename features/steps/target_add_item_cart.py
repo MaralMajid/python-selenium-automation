@@ -5,6 +5,8 @@ from time import sleep
 
 @when('Add the item to cart')
 def add_to_cart(context):
+    context.driver.execute_script("window.scrollBy(0, 510)")
+    sleep(5)
     item = context.driver.find_element(By.ID, "addToCartButtonOrTextIdFor82436749")
     item.click()
     sleep(6)
