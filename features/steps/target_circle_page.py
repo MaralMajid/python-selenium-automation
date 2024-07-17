@@ -1,6 +1,9 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
+from selenium.webdriver.support import expected_conditions as EC
+
+
 
 
 @when('Click Target circle  button')
@@ -17,6 +20,6 @@ def find_benefit_cells(context):
 @then('Verify benefit has {number} links')
 def count_benefit_cells(context, number):
     number = int(number)
+    context.driver.wait.until(EC.visibility_of_all_elements_located((By.CSS_SELECTOR, "[class='cell-item-content']")))
     links = context.driver.find_elements(By.CSS_SELECTOR, "[class='cell-item-content']")
     assert len(links) == number , f' Expected {number}, got {len(links)}'
-    sleep(5)
