@@ -7,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 @given('Open Target main page')
 def open_target(context):
-    context.driver.get('https://www.target.com/')
+    context.app.main_page.open()
 
 @when("Click on cart button")
 def click_card(context):
@@ -30,7 +30,7 @@ def click_right_button(context):
 
 @when('Search for {product}')
 def search_for_product(context,product):
-    context.driver.find_element(By.CSS_SELECTOR,"#search" ).send_keys(product)
+    context.app.header.search()
 
 
 
