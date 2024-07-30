@@ -15,13 +15,13 @@ def click_card(context):
 
 @when ("Click on Sign in button")
 def click_sign_in(context):
-    context.app.header_page.sign_in_button
+    context.app.header_page.sign_in_button()
     #context.driver.wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@data-test='@web/AccountLink']")))
     #context.driver.find_element(By.XPATH, "//*[@data-test='@web/AccountLink']").click()
 
 @when("Click on right Sign in button")
 def click_right_button(context):
-    context.app.header_page.right_sign_in_button
+    context.app.header_page.right_sign_in_button()
     # context.driver.wait.until(EC.element_to_be_clickable((By.XPATH, "//*[@data-test='accountNav-signIn']")))
     # context.driver.find_element(By.XPATH, "//*[@data-test='accountNav-signIn']").click()
 

@@ -6,6 +6,9 @@ from pages.search_results_page import SearchResutsPage
 from pages.base_page import Page
 from pages.cart_page import CartPage
 from pages.sign_in_page import Sign_In
+from pages.target_signin_tc_page import TargetSinginTC
+from pages.terms_and_conditions_page import TermAndConditionPage
+
 
 class Application:
     def __init__(self, driver):
@@ -16,5 +19,7 @@ class Application:
         self.search_page = SearchResutsPage(driver)
         self.header_page = Header(driver)
         self.sign_in_page = Sign_In(driver)
+        self.target_terms_conditions_page = TargetSinginTC(driver)
+        self.terms_and_conditions_page = TermAndConditionPage(driver)
 
 
