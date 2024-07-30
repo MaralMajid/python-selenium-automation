@@ -7,20 +7,20 @@ Feature: Target main page search tests
     Then Verify search results shown for coffee
     Then Verify correct search results URL opens for coffee
 
-#
-#  Scenario: User can search for a product for water
-#    Given Open Target main page
-#    When Search for water
-#    When Click search button
-#    Then Verify search results shown for water
-#    Then Verify correct search results URL opens for water
-#
-#  Scenario: User can search for a product for shampoo
-#    Given Open Target main page
-#    When Search for shampoo
-#    When Click search button
-#    Then Verify search results shown for shampoo
-#    Then Verify correct search results URL opens for shampoo
+
+  Scenario: User can search for a product for water
+    Given Open Target main page
+    When Search for water
+    When Click search button
+    Then Verify search results shown for water
+    Then Verify correct search results URL opens for water
+
+  Scenario: User can search for a product for shampoo
+    Given Open Target main page
+    When Search for shampoo
+    When Click search button
+    Then Verify search results shown for shampoo
+    Then Verify correct search results URL opens for shampoo
 
 
 #  Scenario Outline: User can search for products
