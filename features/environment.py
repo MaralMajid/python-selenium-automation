@@ -14,9 +14,13 @@ def browser_init(context, scenario_name):
     """
 
     # ---- Chrome Configuration ----
-    # driver_path = './chromedriver.exe'
-    # service = Service(driver_path)
-    # context.driver = webdriver.Chrome(service=service)
+    driver_path = './chromedriver.exe'
+    service = Service(driver_path)
+    context.driver = webdriver.Chrome(service=service)
+
+
+
+
 
     # ---- BROWSERSTACK ----
     bs_user = 'maralmajidli_lSNKum'

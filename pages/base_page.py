@@ -1,5 +1,7 @@
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from time import sleep
 
 
@@ -32,7 +34,7 @@ class Page:
         return w
 
     def switch_to_new_window(self):
-        self.wait.until(EC.new_window_is_opened)
+        self.wait.until(EC.new_window_is_opened())
         windows = self.driver.window_handles
         self.driver.switch_to.window(windows[1])
         print(f'Switched to window => {windows[1]}')
@@ -65,3 +67,9 @@ class Page:
     def verify_partial_url(self, expected_partial_url, *locator):
         actual_url = self.driver.current_url
         assert expected_partial_url in actual_url, f'Expected {expected_partial_url} not in actual {actual_url}'
+
+    def wait_for_element_appear(self, *locator):
+        self.wait.until(
+            EC.visibility_of_element_located(locator),
+            message=f'Element by {locator} did not appear'
+        )
