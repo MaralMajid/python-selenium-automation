@@ -7,4 +7,5 @@ Feature: Target incorrect verifies test
     When Click on right Sign in button
     When Input wrong email address
     And Input wrong password
+    Then Click login button
     Then Verifies that error message is shown

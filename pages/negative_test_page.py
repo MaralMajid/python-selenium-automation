@@ -11,7 +11,6 @@ class NegativeTestPage(Page):
     INPUT_PASSWORD = (By.CSS_SELECTOR,"input[id='password']")
     CLICK_SIGNIN_BTN = (By.CSS_SELECTOR,"button[id='login']")
     ERROR_MSG =(By.CSS_SELECTOR, "div[data-test='authAlertDisplay'] div")
-   # ERROR_MSG = (By.CSS_SELECTOR, 'h1')
 
 
 
@@ -31,9 +30,8 @@ class NegativeTestPage(Page):
 
 
     def verify_error_message(self):
-        sleep(8)
-        #self.wait_for_element_appear(*self.ERROR_MSG)
-        #self.verify_partial_text(' find your account.', *self.ERROR_MSG)
-        error_message = self.find_element(*self.ERROR_MSG).text
-        assert "find your account" in error_message, f'Expected find your account but got {error_message}'
+        self.wait_for_element_appear(*self.ERROR_MSG)
+        self.verify_partial_text(' find your account.', *self.ERROR_MSG)
+        # error_message = self.find_element(*self.ERROR_MSG).text
+        # assert "find your account" in error_message, f'Expected find your account but got {error_message}'
 
